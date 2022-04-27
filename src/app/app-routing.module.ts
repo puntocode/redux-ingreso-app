@@ -5,9 +5,7 @@ import { AuthGuard } from './auth/guard/auth.guard';
 
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { dashboardRoutes } from './dashboard/dashboard.routes';
 
 
 const routes: Routes = [
@@ -16,9 +14,8 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     {
         path: 'dashboard',
-        component: DashboardComponent,
-        children: dashboardRoutes,
-        canActivate: [AuthGuard]
+        loadChildren: () => import('./ingreso-app/ingreso-app.module').then(m => m.IngresoAppModule),
+        canLoad: [ AuthGuard ]
     },
     { path: '**', redirectTo: '' }
 ];

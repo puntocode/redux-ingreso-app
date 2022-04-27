@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { filter, Subscription } from 'rxjs';
 import { AppState } from 'src/app/app.reducer';
-import { IngresoEgresoService } from 'src/app/ingreso-egreso/service/ingreso-egreso.service';
+import { IngresoEgresoService } from 'src/app/ingreso-app/ingreso-egreso/service/ingreso-egreso.service';
 import { AuthService } from '../../auth/services/auth.service';
 
 @Component({

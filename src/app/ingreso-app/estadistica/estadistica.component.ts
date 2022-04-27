@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { AppState } from '../app.reducer';
+import * as fromIngresoEgreso from '../ingreso-egreso/actions/ingreso-egreso.reducer';
 
 @Component({
   selector: 'app-estadistica',
@@ -18,7 +18,7 @@ export class EstadisticaComponent implements OnInit {
   cuantosIngresos!:number;
   cuantosEgresos!:number;
 
-  constructor(private store:Store<AppState>) { }
+  constructor(private store:Store<fromIngresoEgreso.IngresoState>) { }
 
   ngOnInit(): void {
     this.subscription = this.store.select('ingresoEgreso')

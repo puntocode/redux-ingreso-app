@@ -63,7 +63,7 @@ export class AuthService {
           this.afDB.doc(`${ user.uid }/usuario`)
               .set( user )
               .then( () => {
-                this.router.navigate(['/dashboard']);
+                this.router.navigate(['/dashboard/estadistica']);
                 this.store.dispatch( new DesactivarLoadingAction() );
               });
         })
@@ -82,7 +82,7 @@ export class AuthService {
       this.afAuth
           .signInWithEmailAndPassword(email, password)
           .then( resp => {
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/dashboard/estadistica']);
             this.store.dispatch( new DesactivarLoadingAction() );
           })
           .catch( error => {

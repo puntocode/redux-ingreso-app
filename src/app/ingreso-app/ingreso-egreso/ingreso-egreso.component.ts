@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IngresoEgreso } from './models/IngresoEgreso.model';
-import { IngresoEgresoService } from './service/ingreso-egreso.service';
 
 import Swal from 'sweetalert2';
 import { Store } from '@ngrx/store';
-import { AppState } from '../app.reducer';
+import { AppState } from '../../app.reducer';
 import { Subscription } from 'rxjs';
-import { ActivarLoadingAction, DesactivarLoadingAction } from '../shared/accions/ui.accion';
+import { ActivarLoadingAction, DesactivarLoadingAction } from '../../shared/accions/ui.accion';
+import { IngresoEgresoService } from './service/ingreso-egreso.service';
 
 @Component({
   selector: 'app-ingreso-egreso',
